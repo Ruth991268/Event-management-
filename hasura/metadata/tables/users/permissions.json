@@ -1,0 +1,26 @@
+{
+  "select": {
+    "role": "user",
+    "columns": ["id", "name", "email", "avatar_url", "created_at"],
+    "filter": {
+      "id": {"_eq": "X-Hasura-User-Id"}
+    }
+  },
+  "insert": {
+    "role": "user",
+    "columns": ["name", "email", "password"]
+  },
+  "update": {
+    "role": "user",
+    "columns": ["name", "email", "avatar_url"],
+    "filter": {
+      "id": {"_eq": "X-Hasura-User-Id"}
+    }
+  },
+  "delete": {
+    "role": "user",
+    "filter": {
+      "id": {"_eq": "X-Hasura-User-Id"}
+    }
+  }
+}

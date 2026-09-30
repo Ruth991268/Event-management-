@@ -1,0 +1,24 @@
+{
+  "select": {
+    "role": "user",
+    "columns": ["id", "title", "description", "category", "date", "created_by"],
+    "filter": {}
+  },
+  "insert": {
+    "role": "user",
+    "columns": ["title", "description", "category", "date", "created_by"]
+  },
+  "update": {
+    "role": "user",
+    "columns": ["title", "description", "category", "date"],
+    "filter": {
+      "created_by": {"_eq": "X-Hasura-User-Id"}
+    }
+  },
+  "delete": {
+    "role": "user",
+    "filter": {
+      "created_by": {"_eq": "X-Hasura-User-Id"}
+    }
+  }
+}

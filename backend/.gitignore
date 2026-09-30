@@ -1,0 +1,16 @@
+# Go build
+/bin/
+/obj/
+
+# Go modules
+/go.sum
+
+# Env files
+.env
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store

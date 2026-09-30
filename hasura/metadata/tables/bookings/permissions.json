@@ -1,0 +1,26 @@
+{
+  "select": {
+    "role": "user",
+    "columns": ["id", "event_id", "user_id", "status", "created_at"],
+    "filter": {
+      "user_id": {"_eq": "X-Hasura-User-Id"}
+    }
+  },
+  "insert": {
+    "role": "user",
+    "columns": ["event_id", "user_id", "status"]
+  },
+  "update": {
+    "role": "user",
+    "columns": ["status"],
+    "filter": {
+      "user_id": {"_eq": "X-Hasura-User-Id"}
+    }
+  },
+  "delete": {
+    "role": "user",
+    "filter": {
+      "user_id": {"_eq": "X-Hasura-User-Id"}
+    }
+  }
+}
